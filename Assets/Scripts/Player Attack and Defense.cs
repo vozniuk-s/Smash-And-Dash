@@ -8,7 +8,6 @@ public class PlayerAttackandDefense : MonoBehaviour
 {
     private static float attackCooldown = 0.6f;
     private float cooldown = 0f;
-    private bool triggerSelected = false;
     private Animator _animator;
     private void Awake()
     {

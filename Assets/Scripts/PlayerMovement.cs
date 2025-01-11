@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float runOnAirSpeed = 3f;
     [SerializeField] private float runWithBlockSpeed = 0f;
     [SerializeField] private float jumpSpeed = 5f;
-    [SerializeField] private GameObject[] ViewPoints;
 
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
@@ -63,10 +62,6 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetInteger("AnimState", (int)AnimStates.Run);
         _spriteRenderer.flipX = dir < 0f;
         _rb.transform.Translate(new Vector3(dir * speed * Time.deltaTime, 0, 0));
-
-        foreach (GameObject obj in ViewPoints)
-            obj.transform.Translate(new Vector3(dir * speed * Time.deltaTime, 0, 0));
-
     }
 
     private void Jump()
